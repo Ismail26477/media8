@@ -77,7 +77,7 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
 const projects: Project[] = rawProjects.map((p, i) => ({
   ...p,
   img: pick(i),
-  span: i % 5 === 0 ? "row-span-2" : "",
+  span: "",
 }));
 
 const filters: Cat[] = ["All", "Feature Films", "Short Films", "Podcasts", "Music", "Corporate"];
@@ -152,16 +152,7 @@ const Portfolio = memo(() => {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 border border-transparent group-hover:border-primary transition-colors" />
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
-                    {p.category}
-                  </span>
-                  <h3 className="font-display text-2xl uppercase tracking-wide">
-                    {p.title}
-                  </h3>
-                </div>
                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-primary/0 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-primary group-hover:border-primary transition-all">
                   <Play size={14} className="text-primary-foreground ml-0.5" />
                 </div>
