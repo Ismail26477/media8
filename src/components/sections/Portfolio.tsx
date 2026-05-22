@@ -132,7 +132,7 @@ const Portfolio = memo(() => {
 
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] md:auto-rows-[280px] gap-3 md:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4"
         >
           <AnimatePresence mode="popLayout">
             {visible.map((p, i) => (
@@ -144,7 +144,7 @@ const Portfolio = memo(() => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.15) }}
                 onClick={() => handleOpen(p)}
-                className={`group relative overflow-hidden text-left ${p.span}`}
+                className={`group relative overflow-hidden text-left aspect-[9/16] ${p.span}`}
               >
                 <img
                   src={p.img}
