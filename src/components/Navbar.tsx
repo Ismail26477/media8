@@ -91,12 +91,20 @@ const Navbar = memo(() => {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/98 backdrop-blur-xl flex flex-col"
-          >
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+              onClick={handleMenuClose}
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-background/98 backdrop-blur-xl flex flex-col"
+            >
             <div className="container flex items-center justify-between h-20">
               <Logo />
               <button onClick={handleMenuClose} aria-label="Close navigation menu" className="p-2 -mr-2">
@@ -120,7 +128,8 @@ const Navbar = memo(() => {
                 </motion.li>
               ))}
             </ul>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
