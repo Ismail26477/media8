@@ -42,6 +42,17 @@ const Navbar = memo(() => {
   }, []);
 
   useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
+  useEffect(() => {
     setOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [location.pathname]);
@@ -91,12 +102,21 @@ const Navbar = memo(() => {
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/98 backdrop-blur-xl flex flex-col"
-          >
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-black/0 backdrop-blur-md"
+              onClick={handleMenuClose}
+              style={{ pointerEvents: "auto" }}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -100 }}
+              className="fixed top-0 left-0 right-0 z-50 bg-background flex flex-col h-screen overflow-y-auto"
+            >
             <div className="container flex items-center justify-between h-20">
               <Logo />
               <button onClick={handleMenuClose} aria-label="Close navigation menu" className="p-2 -mr-2">
@@ -120,7 +140,8 @@ const Navbar = memo(() => {
                 </motion.li>
               ))}
             </ul>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
