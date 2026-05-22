@@ -29,7 +29,7 @@ interface Project {
 }
 
 const imgs = [w1, w2, w3, w4, w5, w6, w7, w8, w9, w11, w12, w13, w14, w15, w16, w17];
-const pick = (i: number) => imgs[i % imgs.length];
+const pick = (i: number) => imgs[i < imgs.length ? i : 0];
 
 const rawProjects: Omit<Project, "img" | "span">[] = [
   // Feature Films
@@ -55,29 +55,14 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
   { title: "Khakee Gulab: Ek Rasrang", category: "Music", desc: "Full music album production and recording." },
   { title: "Khakee Gulab: Ek Bhakti Sugandh", category: "Music", desc: "Devotional music album — production and recording." },
   { title: "Jhep", category: "Music", desc: "Music album production and audio engineering." },
-  { title: "Sukhachi Thev", category: "Music", desc: "Music album — full production and recording." },
-  { title: "Tujha Ek Themb", category: "Music", desc: "Music album featuring dubbing and production." },
-  { title: "Bhakti Vedant Book Trust Audio Book", category: "Music", desc: "Sacred audio book production and narration." },
-
+  
   // Corporate Films
-  { title: "Symbiosis SSOU", category: "Corporate", desc: "Corporate and documentary film for Symbiosis Skills & Professional University, Pune." },
-  { title: "Finolex Pipes", category: "Corporate", desc: "Corporate brand film production." },
-  { title: "Teradata India", category: "Corporate", desc: "Corporate film production and post-production." },
-  { title: "AppDirect India", category: "Corporate", desc: "Corporate film production." },
-  { title: "Maharashtra Tourism", category: "Corporate", desc: "Corporate film for Maharashtra Tourism Department Board." },
-  { title: "Maharashtra Government", category: "Corporate", desc: "Government film production and post-production." },
-  { title: "Nanded Waghala", category: "Corporate", desc: "Corporate film for Nanded Waghala Municipal Corporation." },
-  { title: "Gurukul Public School", category: "Corporate", desc: "School documentary and corporate film production." },
-  { title: "Snovel", category: "Corporate", desc: "Corporate film and platform production." },
-  { title: "Audible", category: "Corporate", desc: "Corporate content and audio production." },
-  { title: "Rhyfil", category: "Corporate", desc: "Corporate film production." },
-  { title: "Zee Music Marathi", category: "Corporate", desc: "Music production for Zee Music Marathi." },
-];
+ ];
 
 const projects: Project[] = rawProjects.map((p, i) => ({
   ...p,
   img: pick(i),
-  span: i % 5 === 0 ? "row-span-2" : "",
+  span: "",
 }));
 
 const filters: Cat[] = ["All", "Feature Films", "Short Films", "Podcasts", "Music", "Corporate"];
@@ -132,7 +117,7 @@ const Portfolio = memo(() => {
 
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[250px] md:auto-rows-[280px] gap-3 md:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4"
         >
           <AnimatePresence mode="popLayout">
             {visible.map((p, i) => (
@@ -144,7 +129,7 @@ const Portfolio = memo(() => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.15) }}
                 onClick={() => handleOpen(p)}
-                className={`group relative overflow-hidden text-left ${p.span}`}
+                className={`group relative overflow-hidden text-left aspect-[9/16] ${p.span}`}
               >
                 <img
                   src={p.img}
@@ -152,16 +137,7 @@ const Portfolio = memo(() => {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
                 <div className="absolute inset-0 border border-transparent group-hover:border-primary transition-colors" />
-                <div className="relative h-full flex flex-col justify-end p-6">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
-                    {p.category}
-                  </span>
-                  <h3 className="font-display text-2xl uppercase tracking-wide">
-                    {p.title}
-                  </h3>
-                </div>
                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-primary/0 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-primary group-hover:border-primary transition-all">
                   <Play size={14} className="text-primary-foreground ml-0.5" />
                 </div>
