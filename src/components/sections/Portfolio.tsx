@@ -29,7 +29,7 @@ interface Project {
 }
 
 const imgs = [w1, w2, w3, w4, w5, w6, w7, w8, w9, w11, w12, w13, w14, w15, w16, w17];
-const pick = (i: number) => imgs[i % imgs.length];
+const pick = (i: number) => imgs[i < imgs.length ? i : 0];
 
 const rawProjects: Omit<Project, "img" | "span">[] = [
   // Feature Films
