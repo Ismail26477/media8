@@ -129,13 +129,13 @@ const Portfolio = memo(() => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.15) }}
                 onClick={() => handleOpen(p)}
-                className={`group relative overflow-hidden text-left aspect-[9/16] ${p.span}`}
+                className={`group relative overflow-hidden text-left w-full ${p.span}`}
               >
                 <img
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 border border-transparent group-hover:border-primary transition-colors" />
                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-primary/0 border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-primary group-hover:border-primary transition-all">

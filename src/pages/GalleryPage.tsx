@@ -107,14 +107,14 @@ const GalleryPage = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card aspect-[4/5]"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card w-full"
             >
 
               <img
                 src={p.img}
                 alt={p.name}
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
               />
 
               {/* Overlay */}
