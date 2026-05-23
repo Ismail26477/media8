@@ -52,7 +52,6 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
   { title: "Jai Bhim Jai Savitri", category: "Feature Films", desc: "Multi-language production (Marathi, Hindi, Telugu, Kannada, Tamil, Malayalam) — complete audio engineering and dubbing." },
   { title: "Rajkumar", category: "Feature Films", desc: "Music production and dubbing for this acclaimed Marathi historical epic." },
   { title: "Sarla Ek koti", category: "Feature Films", desc: "Complete dubbing post-production for this biographical Marathi blockbuster." },
-  { title: "Jawani Zindagiwa", category: "Feature Films", desc: "Audio post production for this Marathi family drama." },
 
   // Award-Winning Short Films
   { title: "Raan", category: "Short Films", desc: "Award-winning short film — production and complete post-production." },
@@ -66,17 +65,11 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
   { title: "Jyoti", category: "Feature Films", desc: "Audio engineering and dubbing for this contemporary Marathi web series." },
 
   // Podcasts
-  { title: "+91 Podcast", category: "Podcasts", desc: "Full podcast production available on Snovel's web portal." },
-  { title: "Charging Point", category: "Podcasts", desc: "Podcast production and audio engineering. Available on Snovel." },
-  { title: "Screen Time", category: "Podcasts", desc: "Podcast production and distribution. Available on Snovel." },
 
   // Music Albums
-  { title: "Khakee Gulab: Ek Rasrang", category: "Music", desc: "Full music album production and recording." },
-  { title: "Khakee Gulab: Ek Bhakti Sugandh", category: "Music", desc: "Devotional music album — production and recording." },
-  { title: "Jhep", category: "Music", desc: "Music album production and audio engineering." },
-  
+
   // Corporate Films
- ];
+];
 
 const projects: Project[] = rawProjects.map((p, i) => ({
   ...p,

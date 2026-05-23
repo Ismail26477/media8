@@ -291,9 +291,8 @@ const TableRow = ({
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true, margin: "-30px" }}
     transition={{ duration: 0.4, delay: Math.min(i * 0.03, 0.5) }}
-    className={`group flex items-center justify-between gap-4 py-4 px-6 border-b border-border border-l-4 border-l-transparent hover:border-l-primary hover:bg-background-elevated transition-all ${
-      i % 2 === 1 ? "bg-background-elevated/40" : ""
-    }`}
+    className={`group flex items-center justify-between gap-4 py-4 px-6 border-b border-border border-l-4 border-l-transparent hover:border-l-primary hover:bg-background-elevated transition-all ${i % 2 === 1 ? "bg-background-elevated/40" : ""
+      }`}
   >
     <span className="text-foreground font-medium text-sm md:text-base">{title}</span>
     <span className="text-[10px] md:text-xs uppercase tracking-widest text-primary text-right shrink-0">
@@ -346,11 +345,10 @@ const WorkShowcase = () => {
               <button
                 key={f}
                 onClick={() => setActive(f)}
-                className={`px-4 py-2 text-[10px] md:text-xs uppercase tracking-[0.2em] border transition-all whitespace-nowrap ${
-                  active === f
+                className={`px-4 py-2 text-[10px] md:text-xs uppercase tracking-[0.2em] border transition-all whitespace-nowrap ${active === f
                     ? "bg-primary text-primary-foreground border-primary"
                     : "border-border text-muted-foreground hover:border-primary hover:text-primary"
-                }`}
+                  }`}
               >
                 {f}
               </button>
@@ -421,7 +419,7 @@ const WorkShowcase = () => {
         <section className="py-20">
           <div className="container">
             <SectionHeader num="04" title="Award-Winning Short Films" count="5 Short Films" />
-            
+
             {/* Films with Images */}
             <div className="mb-12">
               <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-foreground mb-6 flex items-center gap-3">
@@ -599,7 +597,7 @@ const WorkShowcase = () => {
         <section className="py-20">
           <div className="container">
             <SectionHeader num="08" title="Films & Productions" count="9 Productions" />
-            
+
             {/* Recent Productions with Images */}
             <div className="mb-16">
               <h3 className="font-display text-2xl md:text-3xl uppercase tracking-wide text-foreground mb-8 flex items-center gap-3">
