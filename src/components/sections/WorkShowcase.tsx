@@ -174,6 +174,18 @@ const filmCategories = {
       category: "Comedy Drama",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-e7vA3pznIjahCYWW6bMOG2HVEZPjSv.png",
     },
+    {
+      title: "श्री शिव जी महिमा नालकूट (Shree Shiva Ji Mahima Nalkoot)",
+      description: "Family Drama",
+      category: "Family Drama",
+      image: "/films/shiva-ji-mahima.jpg",
+    },
+    {
+      title: "सुरुळता एक कोडी (Suruulta Ek Kodi)",
+      description: "Drama",
+      category: "Drama",
+      image: "/films/suruulta-ek-kodi.jpg",
+    },
   ],
   featureFilms: [
     {
