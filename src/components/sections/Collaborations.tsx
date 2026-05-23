@@ -2,30 +2,41 @@ import { motion } from "framer-motion";
 import { Mic2 } from "lucide-react";
 
 const people = [
-  { name: "Shankar Mahadevan", project: "Katyar to Kajarare Promotions" },
-  { name: "Subodh Bhave", project: "Dubbing — Ani Dr. Kashinath Ghanekar" },
-  { name: "Mahalaxmi Iyer", project: "Album Dubbing — Tujha Ek Themb" },
-  { name: "Avdhoot Gupte", project: "Music Single Recording" },
-  { name: "Savanee Ravindra", project: "Music Single Dubbing" },
-  { name: "Amey Wagh", project: "Marathi Film Dubbing" },
-  { name: "Siddarth Menon", project: "Marathi Film Dubbing" },
-  { name: "Pt. Shaunak Abhisheki", project: "Marathi Single Recording" },
-  { name: "Jyoti Subash", project: "Film Dubbing — Basta" },
-  { name: "Mangesh Borgaonkar", project: "Music Album Dubbing" },
+  { name: "Shankar Mahadevan", project: "Katyar to Kajarare Promotions", image: "/collaborators/shankar-mahadevan.jpg" },
+  { name: "Subodh Bhave", project: "Dubbing — Ani Dr. Kashinath Ghanekar", image: "/collaborators/subodh-bhave.jpg" },
+  { name: "Mahalaxmi Iyer", project: "Album Dubbing — Tujha Ek Themb", image: "/collaborators/mahalaxmi-iyer.jpg" },
+  { name: "Avdhoot Gupte", project: "Music Single Recording", image: "/collaborators/avdhoot-gupte.jpg" },
+  { name: "Savanee Ravindra", project: "Music Single Dubbing", image: "/collaborators/savanee-ravindra.jpg" },
+  { name: "Amey Wagh", project: "Marathi Film Dubbing", image: "/collaborators/amey-wagh.jpg" },
+  { name: "Siddarth Menon", project: "Marathi Film Dubbing", image: "/collaborators/siddarth-menon.jpg" },
+  { name: "Pt. Shaunak Abhisheki", project: "Marathi Single Recording", image: "/collaborators/shaunak-abhisheki.jpg" },
+  { name: "Jyoti Subash", project: "Film Dubbing — Basta", image: "/collaborators/jyoti-subash.jpg" },
+  { name: "Mangesh Borgaonkar", project: "Music Album Dubbing", image: "/collaborators/mangesh-borgaonkar.jpg" },
 ];
 
-const Card = ({ name, project }: { name: string; project: string }) => (
-  <div className="glass-card p-6 min-w-[260px] sm:min-w-0 group hover:border-primary transition-colors">
-    <div className="flex items-start gap-4">
-      <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-colors shrink-0">
-        <Mic2 size={16} strokeWidth={1.5} />
+const Card = ({ name, project, image }: { name: string; project: string; image?: string }) => (
+  <div className="glass-card overflow-hidden min-w-[260px] sm:min-w-0 group hover:border-primary transition-colors">
+    {image && (
+      <div className="relative overflow-hidden bg-background aspect-square">
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
       </div>
-      <div>
-        <div className="font-display text-xl uppercase tracking-wide leading-tight">
-          {name}
+    )}
+    <div className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:border-primary group-hover:text-primary transition-colors shrink-0">
+          <Mic2 size={16} strokeWidth={1.5} />
         </div>
-        <div className="text-xs text-primary mt-1.5 uppercase tracking-[0.15em]">
-          {project}
+        <div>
+          <div className="font-display text-lg uppercase tracking-wide leading-tight">
+            {name}
+          </div>
+          <div className="text-xs text-primary mt-1.5 uppercase tracking-[0.15em]">
+            {project}
+          </div>
         </div>
       </div>
     </div>
