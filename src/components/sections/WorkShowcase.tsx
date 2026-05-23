@@ -682,9 +682,9 @@ const WorkShowcase = () => {
               <div className="bg-background-elevated border border-border p-8">
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {filmCategories.shortFilms.map((film) => (
-                    <li key={film} className="flex items-start gap-3 text-foreground">
+                    <li key={film.title} className="flex items-start gap-3 text-foreground">
                       <span className="text-primary mt-1">•</span>
-                      <span className="font-medium">{film}</span>
+                      <span className="font-medium">{film.title}</span>
                     </li>
                   ))}
                 </ul>
