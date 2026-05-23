@@ -37,7 +37,7 @@ const photos = [
 
 const films = [
   {
-    title: "Jai Bhim",
+    title: "RAAJ",
     poster:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GKIHJtOKOs7YSYTbQ5QnK4gSw1dfXq.png",
   },
