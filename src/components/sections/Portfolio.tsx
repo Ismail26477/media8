@@ -28,8 +28,34 @@ interface Project {
   desc: string;
 }
 
-const imgs = [w1, w2, w3, w4, w5, w6, w7, w8, w9, w11, w12, w13, w14, w15, w16, w17];
-const pick = (i: number) => imgs[i < imgs.length ? i : 0];
+const projectImages: Record<string, string> = {
+  "Farzand": w1,
+  "Basta": w2,
+  "Ani Dr. Kashinath Ghanekar": w3,
+  "Rajkumar": w4,
+  "Sarla Ek koti": w5,
+  "Jawani Zindagiwa": w6,
+  "Bapla": "/images/bapla-poster.jpg",
+  "Bin Lugdi Gaani": "/images/bin-lugdi-gaani-poster.jpg",
+  "Guli": "/images/guli-poster.jpg",
+  "Samhat Maharaj": "/images/samhat-maharaj-poster.jpg",
+  "Swapna": "/images/swapna-poster.jpg",
+  "Saath Baandi Naarinchi": "/images/saath-baandi-naarinchi-poster.jpg",
+  "Like Aani Subscribe": "/images/like-aani-subscribe-poster.jpg",
+  "Raan": w7,
+  "Lalbaug chi rani": w8,
+  "Dilemma": w9,
+  "Vashat ": w11,
+  "Aisahri": "/images/aisahri-poster.jpg",
+  "+91 Podcast": w12,
+  "Charging Point": w13,
+  "Screen Time": w14,
+  "Khakee Gulab: Ek Rasrang": w15,
+  "Khakee Gulab: Ek Bhakti Sugandh": w16,
+  "Jhep": w17,
+};
+
+const pick = (title: string) => projectImages[title] || w1;
 
 const rawProjects: Omit<Project, "img" | "span">[] = [
   // Feature Films
@@ -39,12 +65,20 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
   { title: "Rajkumar", category: "Feature Films", desc: "Music production and dubbing for this acclaimed Marathi historical epic." },
   { title: "Sarla Ek koti", category: "Feature Films", desc: "Complete dubbing post-production for this biographical Marathi blockbuster." },
   { title: "Jawani Zindagiwa", category: "Feature Films", desc: "Audio post production for this Marathi family drama." },
+  { title: "Bapla", category: "Feature Films", desc: "Complete audio post-production for this Marathi thriller." },
+  { title: "Bin Lugdi Gaani", category: "Feature Films", desc: "Full dubbing and audio production for this heartwarming family drama." },
+  { title: "Guli", category: "Feature Films", desc: "Complete post-production audio for this Marathi women-centric film." },
+  { title: "Samhat Maharaj", category: "Feature Films", desc: "Full audio post-production for this historical action film." },
+  { title: "Swapna", category: "Feature Films", desc: "Complete dubbing and audio engineering for this Marathi period drama." },
+  { title: "Saath Baandi Naarinchi", category: "Feature Films", desc: "Full post-production audio for this romantic Marathi film." },
+  { title: "Like Aani Subscribe", category: "Feature Films", desc: "Complete audio post-production for this contemporary comedy-drama." },
 
   // Award-Winning Short Films
   { title: "Raan", category: "Short Films", desc: "Award-winning short film — production and complete post-production." },
   { title: "Lalbaug chi rani", category: "Short Films", desc: "Short film production and post-production." },
   { title: "Dilemma", category: "Short Films", desc: "Official Selection — Horror Bowl Movie Awards 2021. Multiple festival selections including London Indie Short Festival and Berlin Shorts Award." },
   { title: "Vashat ", category: "Short Films", desc: "Award-winning short film production and post-production." },
+  { title: "Aisahri", category: "Short Films", desc: "Official Selection — 55th IFFI Indian Panorama. Award-winning children's film with complete post-production." },
 
   // Podcasts
   { title: "+91 Podcast", category: "Podcasts", desc: "Full podcast production available on Snovel's web portal." },
@@ -59,9 +93,9 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
   // Corporate Films
  ];
 
-const projects: Project[] = rawProjects.map((p, i) => ({
+const projects: Project[] = rawProjects.map((p) => ({
   ...p,
-  img: pick(i),
+  img: pick(p.title),
   span: "",
 }));
 
