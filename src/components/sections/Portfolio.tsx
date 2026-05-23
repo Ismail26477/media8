@@ -17,6 +17,15 @@ import w14 from "@/assets/work-14.jpg";
 import w15 from "@/assets/work-15.jpg";
 import w16 from "@/assets/work-16.jpg";
 import w17 from "@/assets/work-17.jpg";
+import brasta from "@/assets/brasta.jpg";
+import likeAaniSubscribe from "@/assets/like-aani-subscribe.jpg";
+import binLagunaatiGaach from "@/assets/bin-lagunaati-gaach.jpg";
+import ashki from "@/assets/ashki.jpg";
+import vinayakPandit from "@/assets/vinayak-pandit.jpg";
+import saapla from "@/assets/saapla.jpg";
+import swopna5 from "@/assets/swopna-5.jpg";
+import jaiBhimJaiSavitri from "@/assets/jai-bhim-jai-savitri.jpg";
+import jyoti from "@/assets/jyoti.jpg";
 
 type Cat = "All" | "Feature Films" | "Short Films" | "Podcasts" | "Music" | "Corporate";
 
@@ -28,14 +37,19 @@ interface Project {
   desc: string;
 }
 
-const imgs = [w1, w2, w3, w4, w5, w6, w7, w8, w9, w11, w12, w13, w14, w15, w16, w17];
+const imgs = [w1, w2, brasta, binLagunaatiGaach, ashki, saapla, swopna5, jaiBhimJaiSavitri, w9, w11, w12, likeAaniSubscribe, vinayakPandit, jyoti, w15, w16, w17];
 const pick = (i: number) => imgs[i < imgs.length ? i : 0];
 
 const rawProjects: Omit<Project, "img" | "span">[] = [
   // Feature Films
   { title: "Farzand", category: "Feature Films", desc: "Complete audio post-production and music production." },
-  { title: "Basta", category: "Feature Films", desc: "Full dubbing post-production for this acclaimed Marathi feature." },
+  { title: "Brasta", category: "Feature Films", desc: "Full dubbing and audio post-production for this acclaimed Marathi family drama." },
   { title: "Ani Dr. Kashinath Ghanekar", category: "Feature Films", desc: "Full audio post production for this Marathi feature film." },
+  { title: "Bin Lagunaati Gaach", category: "Feature Films", desc: "Complete audio post-production for this heartwarming Marathi family film." },
+  { title: "Ashki", category: "Feature Films", desc: "Full production support for this Marathi drama feature." },
+  { title: "Saapla", category: "Feature Films", desc: "Audio post-production and dubbing for this Marathi feature film." },
+  { title: "Swopna 5", category: "Feature Films", desc: "Complete audio and post-production work for this Marathi drama." },
+  { title: "Jai Bhim Jai Savitri", category: "Feature Films", desc: "Multi-language production (Marathi, Hindi, Telugu, Kannada, Tamil, Malayalam) — complete audio engineering and dubbing." },
   { title: "Rajkumar", category: "Feature Films", desc: "Music production and dubbing for this acclaimed Marathi historical epic." },
   { title: "Sarla Ek koti", category: "Feature Films", desc: "Complete dubbing post-production for this biographical Marathi blockbuster." },
   { title: "Jawani Zindagiwa", category: "Feature Films", desc: "Audio post production for this Marathi family drama." },
@@ -45,6 +59,11 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
   { title: "Lalbaug chi rani", category: "Short Films", desc: "Short film production and post-production." },
   { title: "Dilemma", category: "Short Films", desc: "Official Selection — Horror Bowl Movie Awards 2021. Multiple festival selections including London Indie Short Festival and Berlin Shorts Award." },
   { title: "Vashat ", category: "Short Films", desc: "Award-winning short film production and post-production." },
+
+  // Web Series
+  { title: "Like Aani Subscribe", category: "Feature Films", desc: "Full production support for this popular Marathi web series." },
+  { title: "Vinayak Pandit", category: "Feature Films", desc: "Complete audio post-production for this Planet Marathi original series." },
+  { title: "Jyoti", category: "Feature Films", desc: "Audio engineering and dubbing for this contemporary Marathi web series." },
 
   // Podcasts
   { title: "+91 Podcast", category: "Podcasts", desc: "Full podcast production available on Snovel's web portal." },
