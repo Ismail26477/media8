@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, ArrowUpRight } from "lucide-react";
-import filmStill from "@/assets/work-4.jpg";
+import filmStill from "@/public/images/diary-of-vinayak-pandit-poster.jpg";
 
 const laurels = [
   "Official Selection — 21st Pune International Film Festival",
