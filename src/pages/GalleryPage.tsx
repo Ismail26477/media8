@@ -71,11 +71,7 @@ const films = [
     poster:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q3bZRZB4A8WJ7PbXU7TsnhNzWCEda8.png",
   },
-  {
-    title: "Raan (Alternate)",
-    poster:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dH6GblaB1J6DF1h8kIScYG7Keu9MWu.png",
-  },
+  
 ];
 
 const GalleryPage = () => (
