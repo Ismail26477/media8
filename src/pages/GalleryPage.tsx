@@ -37,12 +37,12 @@ const photos = [
 
 const films = [
   {
-    title: "RAAJ",
+    title: "Farzand",
     poster:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GKIHJtOKOs7YSYTbQ5QnK4gSw1dfXq.png",
   },
   {
-    title: "Kal Ho Naa Ho",
+    title: "Dr Kashinath Ghanekar",
     poster:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-1i8v2LOkhXbhMOSoEbpoe5OHxi15oN.png",
   },
@@ -52,7 +52,7 @@ const films = [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-uYPxIG7Sd3IkrvMoRLvxXWdzZRiE4d.png",
   },
   {
-    title: "Surkalota Ek Kodi",
+    title: "Sarla ek koti",
     poster:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-mN90d4iVXZnxT7F1lXSsqYFe0hJcpV.png",
   },
@@ -67,7 +67,7 @@ const films = [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-22%20at%2012.14.42%20PM-Y6ozbopi5u9tk9r9UdTVjfFcZLr27C.jpeg",
   },
   {
-    title: "Prem",
+    title: "Basta",
     poster:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q3bZRZB4A8WJ7PbXU7TsnhNzWCEda8.png",
   },
