@@ -61,19 +61,26 @@ const videoProd: Array<[string, string]> = [
   ["Premat Petal Man Saar", "Edit"],
 ];
 
-const corporate: Array<[string, string, string]> = [
-  ["Sri Daata Shikhar Santhan", "Corporate Film", "Mahur"],
-  ["Rahuri University", "Documentary", "Ahmadnagar"],
-  ["Symbiosis School of Open University", "Corporate Film", "Pune"],
-  ["Gurukul Public School", "School Documentary", "Nanded"],
-  ["Greenleaf Public School", "School Documentary", "Dharmabad, Nanded"],
-  ["AppDirect India", "Corporate Film", "India"],
-  ["Teradata India", "Corporate Film", "India"],
-  ["Kadak Special", "TVC", "—"],
-  ["JSPM", "Corporate Film", "Pune"],
-  ["MGM Engineering College", "Corporate Film", "Nanded"],
-  ["Election Campaign", "Campaign Film", "—"],
-  ["Mitti Ke Sitare", "Documentary", "—"],
+interface CorporateItem {
+  name: string;
+  type: string;
+  location: string;
+  image?: string;
+}
+
+const corporate: Array<CorporateItem> = [
+  { name: "Sri Daata Shikhar Santhan", type: "Corporate Film", location: "Mahur" },
+  { name: "Rahuri University", type: "Documentary", location: "Ahmadnagar", image: "/corporate/gateway-of-india.jpg" },
+  { name: "Symbiosis School of Open University", type: "Corporate Film", location: "Pune" },
+  { name: "Gurukul Public School", type: "School Documentary", location: "Nanded" },
+  { name: "Greenleaf Public School", type: "School Documentary", location: "Dharmabad, Nanded" },
+  { name: "AppDirect India", type: "Corporate Film", location: "India" },
+  { name: "Teradata India", type: "Corporate Film", location: "India" },
+  { name: "Kadak Special", type: "TVC", location: "—" },
+  { name: "JSPM", type: "Corporate Film", location: "Pune" },
+  { name: "MGM Engineering College", type: "Corporate Film", location: "Nanded" },
+  { name: "Election Campaign", type: "Campaign Film", location: "—" },
+  { name: "Mitti Ke Sitare", type: "Documentary", location: "—" },
 ];
 
 const shortFilms = [
@@ -246,6 +253,13 @@ const filmCategories = {
       image: null,
     },
   ],
+  corporateFilms: [
+    {
+      title: "Maharashtra Tourism",
+      description: "Corporate Showcase",
+      image: "/corporate/gateway-of-india.jpg",
+    },
+  ],
   corporateClients: [
     "Symbiosis Skills and professional university, Pune",
     "Finolex Pipes",
@@ -402,25 +416,74 @@ const WorkShowcase = () => {
         <section className="py-20">
           <div className="container">
             <SectionHeader num="03" title="Corporate & Documentary" count="12 Projects" />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {corporate.map(([client, type, loc], i) => (
-                <motion.div
-                  key={client}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.4, delay: (i % 6) * 0.06 }}
-                  className="bg-background-elevated border border-border border-l-4 border-l-primary p-5 hover:border-primary transition-all"
-                >
-                  <h3 className="text-foreground font-medium">{client}</h3>
-                  <p className="text-primary text-xs uppercase tracking-wider mt-2">
-                    {type}
-                  </p>
-                  <p className="text-muted-foreground text-[10px] uppercase tracking-widest mt-1">
-                    {loc}
-                  </p>
-                </motion.div>
-              ))}
+            
+            {/* Corporate Films with Images */}
+            <div className="mb-12">
+              <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-foreground mb-6 flex items-center gap-3">
+                <span className="text-primary">▸</span> Featured Works
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                {corporate
+                  .filter((c) => c.image)
+                  .map((c, i) => (
+                    <motion.div
+                      key={c.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-30px" }}
+                      transition={{ duration: 0.4, delay: i * 0.06 }}
+                      className="group bg-background-elevated border border-border overflow-hidden hover:border-primary transition-all"
+                    >
+                      <div className="relative overflow-hidden bg-background aspect-[3/4]">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h4 className="font-display text-sm md:text-base uppercase tracking-wide text-foreground line-clamp-2">
+                          {c.name}
+                        </h4>
+                        <p className="text-primary text-[10px] uppercase tracking-widest mt-2">
+                          {c.type}
+                        </p>
+                        <p className="text-muted-foreground text-[10px] uppercase tracking-widest mt-1">
+                          {c.location}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+              </div>
+            </div>
+
+            {/* Corporate List - Text Only */}
+            <div>
+              <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-foreground mb-6 flex items-center gap-3">
+                <span className="text-primary">▸</span> More Projects
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {corporate
+                  .filter((c) => !c.image)
+                  .map((c, i) => (
+                    <motion.div
+                      key={c.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-30px" }}
+                      transition={{ duration: 0.4, delay: (i % 6) * 0.06 }}
+                      className="bg-background-elevated border border-border border-l-4 border-l-primary p-5 hover:border-primary transition-all"
+                    >
+                      <h3 className="text-foreground font-medium">{c.name}</h3>
+                      <p className="text-primary text-xs uppercase tracking-wider mt-2">
+                        {c.type}
+                      </p>
+                      <p className="text-muted-foreground text-[10px] uppercase tracking-widest mt-1">
+                        {c.location}
+                      </p>
+                    </motion.div>
+                  ))}
+              </div>
             </div>
           </div>
         </section>
