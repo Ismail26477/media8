@@ -28,34 +28,37 @@ interface Project {
   desc: string;
 }
 
-const projectImages: Record<string, string> = {
-  "Farzand": w1,
-  "Basta": w2,
-  "Ani Dr. Kashinath Ghanekar": w3,
-  "Rajkumar": w4,
-  "Sarla Ek koti": w5,
-  "Jawani Zindagiwa": w6,
-  "Bapla": "/images/bapla-poster.jpg",
-  "Bin Lugdi Gaani": "/images/bin-lugdi-gaani-poster.jpg",
-  "Guli": "/images/guli-poster.jpg",
-  "Samhat Maharaj": "/images/samhat-maharaj-poster.jpg",
-  "Swapna": "/images/swapna-poster.jpg",
-  "Saath Baandi Naarinchi": "/images/saath-baandi-naarinchi-poster.jpg",
-  "Like Aani Subscribe": "/images/like-aani-subscribe-poster.jpg",
-  "Raan": w7,
-  "Lalbaug chi rani": w8,
-  "Dilemma": w9,
-  "Vashat ": w11,
-  "Aisahri": "/images/aisahri-poster.jpg",
-  "+91 Podcast": w12,
-  "Charging Point": w13,
-  "Screen Time": w14,
-  "Khakee Gulab: Ek Rasrang": w15,
-  "Khakee Gulab: Ek Bhakti Sugandh": w16,
-  "Jhep": w17,
-};
+const assetImages = { w1, w2, w3, w4, w5, w6, w7, w8, w9, w11, w12, w13, w14, w15, w16, w17 };
 
-const pick = (title: string) => projectImages[title] || w1;
+const getProjectImage = (title: string) => {
+  const imageMap: Record<string, any> = {
+    "Farzand": w1,
+    "Basta": w2,
+    "Ani Dr. Kashinath Ghanekar": w3,
+    "Rajkumar": w4,
+    "Sarla Ek koti": w5,
+    "Jawani Zindagiwa": w6,
+    "Bapla": "/images/bapla-poster.jpg",
+    "Bin Lugdi Gaani": "/images/bin-lugdi-gaani-poster.jpg",
+    "Guli": "/images/guli-poster.jpg",
+    "Samhat Maharaj": "/images/samhat-maharaj-poster.jpg",
+    "Swapna": "/images/swapna-poster.jpg",
+    "Saath Baandi Naarinchi": "/images/saath-baandi-naarinchi-poster.jpg",
+    "Like Aani Subscribe": "/images/like-aani-subscribe-poster.jpg",
+    "Raan": w7,
+    "Lalbaug chi rani": w8,
+    "Dilemma": w9,
+    "Vashat ": w11,
+    "Aisahri": "/images/aisahri-poster.jpg",
+    "+91 Podcast": w12,
+    "Charging Point": w13,
+    "Screen Time": w14,
+    "Khakee Gulab: Ek Rasrang": w15,
+    "Khakee Gulab: Ek Bhakti Sugandh": w16,
+    "Jhep": w17,
+  };
+  return imageMap[title] || w1;
+};
 
 const rawProjects: Omit<Project, "img" | "span">[] = [
   // Feature Films
@@ -95,7 +98,7 @@ const rawProjects: Omit<Project, "img" | "span">[] = [
 
 const projects: Project[] = rawProjects.map((p) => ({
   ...p,
-  img: pick(p.title),
+  img: getProjectImage(p.title),
   span: "",
 }));
 
