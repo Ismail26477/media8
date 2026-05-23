@@ -41,11 +41,11 @@ const Chitraboli = () => {
           transition={{ duration: 0.9 }}
           className="relative grid lg:grid-cols-[1.1fr_1fr] gap-0 border border-border bg-background overflow-hidden"
         >
-          <div className="relative aspect-[4/3] lg:aspect-auto min-h-[320px] overflow-hidden">
+          <div className="relative min-h-[320px] overflow-hidden flex items-center justify-center">
             <img
               src="/images/diary-of-vinayak-pandit-poster.jpg"
               alt="Diary of Vinayak Pandit film still"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-auto object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/60" />
           </div>
