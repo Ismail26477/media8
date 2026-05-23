@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Award, ArrowUpRight } from "lucide-react";
-import filmStill from "@/public/images/diary-of-vinayak-pandit-poster.jpg";
 
 const laurels = [
   "Official Selection — 21st Pune International Film Festival",
@@ -44,7 +43,7 @@ const Chitraboli = () => {
         >
           <div className="relative aspect-[4/3] lg:aspect-auto min-h-[320px] overflow-hidden">
             <img
-              src={filmStill}
+              src="/images/diary-of-vinayak-pandit-poster.jpg"
               alt="Diary of Vinayak Pandit film still"
               className="absolute inset-0 w-full h-full object-cover"
             />
