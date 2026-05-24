@@ -17,11 +17,11 @@ const people = [
 const Card = ({ name, project, image }: { name: string; project: string; image?: string }) => (
   <div className="glass-card overflow-hidden min-w-[260px] sm:min-w-0 group hover:border-primary transition-colors">
     {image && (
-      <div className="relative overflow-hidden bg-background aspect-square">
+      <div className="relative overflow-hidden bg-background aspect-video flex items-center justify-center">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
       </div>
     )}
