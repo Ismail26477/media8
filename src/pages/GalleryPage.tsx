@@ -15,6 +15,7 @@ import mahalaxmi from "@/assets/gallery/mahalaxmi-iyer.png";
 import uddhav from "@/assets/gallery/uddhav-thakre.jpg";
 import shankar from "@/assets/gallery/shankar-mahadevan.jpg";
 import subodh from "@/assets/gallery/subodh-bhave.jpg";
+import avdhoot from "@/assets/gallery/avdhoot-gupte.jpg";
 
 const photos = [
   { img: ameyWagh, name: "Amey Wagh", role: "Marathi Film Dubbing" },
@@ -33,6 +34,7 @@ const photos = [
   { img: shankar, name: "Shankar Mahadevan", role: "Katyar to Kajarare Promotions Shoot" },
   { img: subodh, name: "Subodh Bhave", role: "Dubbing For Film" },
   { img: mahalaxmi, name: "Mahalaxmi Iyer", role: "Dubbing for Album Tujha Ek Themb" },
+  { img: avdhoot, name: "Avdhoot Gupte", role: "Music Single Recording" },
 ];
 
 const films = [
