@@ -70,7 +70,7 @@ interface CorporateItem {
 
 const corporate: Array<CorporateItem> = [
   { name: "Sri Daata Shikhar Santhan", type: "Corporate Film", location: "Mahur" },
-  { name: "Rahuri University", type: "Documentary", location: "Ahmadnagar", image: "/corporate/gateway-of-india.jpg" },
+  { name: "Rahuri University", type: "Documentary", location: "Ahmadnagar", image: "/corporate/gateway-india-featured.jpg" },
   { name: "Symbiosis School of Open University", type: "Corporate Film", location: "Pune" },
   { name: "Gurukul Public School", type: "School Documentary", location: "Nanded" },
   { name: "Greenleaf Public School", type: "School Documentary", location: "Dharmabad, Nanded" },
