@@ -422,7 +422,7 @@ const WorkShowcase = () => {
               <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-foreground mb-6 flex items-center gap-3">
                 <span className="text-primary">▸</span> Featured Works
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
                 {corporate
                   .filter((c) => c.image)
                   .map((c, i) => (
@@ -434,7 +434,7 @@ const WorkShowcase = () => {
                       transition={{ duration: 0.4, delay: i * 0.06 }}
                       className="group bg-background-elevated border border-border overflow-hidden hover:border-primary transition-all"
                     >
-                      <div className="relative overflow-hidden bg-background aspect-[3/4]">
+                      <div className="relative overflow-hidden bg-background aspect-video">
                         <img
                           src={c.image}
                           alt={c.name}
